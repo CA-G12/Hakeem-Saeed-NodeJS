@@ -87,6 +87,7 @@ header .logo {
   font-size: 1.3rem;
   align-items: center;
   position: relative;
+  margin-top: 1rem;
 }
 .search-box a {
   color: black;
@@ -140,6 +141,44 @@ header .logo {
 }
 
 /* ----------------- End Header style ---------------- */
+
+/* ----------------- Result Section -------------------*/
+.result-container {
+  background-color: rgba(238, 238, 238, .6);
+  margin: 10rem auto 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  width: 30rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.result-container img {
+  margin-right: 3rem;
+  transform: translate(0);
+  transition: transform 0.25s ease-out;
+}
+
+.result-container img:hover {
+  transform: scale(1.09);
+}
+
+.result-container .result-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex: 2;
+  padding-left: 1rem;
+  border-left: 1.5px solid rgba(222, 7, 18, .5);
+}
+
+.result-container .name {
+  font-size: 1.4rem;
+}
+/* ----------------- Result Section -------------------*/
 /* responsive 600 max  */
 @media (max-width: 600px) {
   .head {
