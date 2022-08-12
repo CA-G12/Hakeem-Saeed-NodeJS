@@ -257,3 +257,55 @@ function rendersearchResult(objs) {
     });
   }
 }
+
+const renderMonster = (obj) => {
+  console.log(obj.id);
+  const imgURL = `https://robohash.org/${obj.id}?set=set2&size=180x180`;
+  const image = document.createElement("img");
+  image.setAttribute("src", imgURL);
+  informationCard.appendChild(image);
+
+  const monsterInfo = document.createElement("div");
+  monsterInfo.classList.add("result-info");
+  informationCard.appendChild(monsterInfo);
+
+  const nameLabelContent = document.createElement("p");
+  nameLabelContent.textContent = "Name : ";
+  const nameContent = document.createElement("span");
+  nameContent.textContent = obj.name;
+  monsterInfo.classList.add("result-info");
+  nameLabelContent.appendChild(nameContent);
+  monsterInfo.appendChild(nameLabelContent);
+
+  const emailLabelContent = document.createElement("p");
+  emailLabelContent.textContent = "Email : ";
+  const emailContent = document.createElement("span");
+  emailContent.textContent = obj.email;
+  monsterInfo.classList.add("result-info");
+  emailLabelContent.appendChild(emailContent);
+  monsterInfo.appendChild(emailLabelContent);
+
+  const cityLabelContent = document.createElement("p");
+  cityLabelContent.textContent = "city : ";
+  const cityContent = document.createElement("span");
+  cityContent.textContent = obj.address.city;
+  monsterInfo.classList.add("result-info");
+  cityLabelContent.appendChild(cityContent);
+  monsterInfo.appendChild(cityLabelContent);
+
+  const companyLabelContent = document.createElement("p");
+  companyLabelContent.textContent = "Company : ";
+  const companyContent = document.createElement("span");
+  companyContent.textContent = obj.company.name;
+  monsterInfo.classList.add("result-info");
+  companyLabelContent.appendChild(companyContent);
+  monsterInfo.appendChild(companyLabelContent);
+
+  const phoneLabelContent = document.createElement("p");
+  phoneLabelContent.textContent = "Phone : ";
+  const phoneContent = document.createElement("span");
+  phoneContent.textContent = obj.phone;
+  monsterInfo.classList.add("result-info");
+  phoneLabelContent.appendChild(phoneContent);
+  monsterInfo.appendChild(phoneLabelContent);
+};
