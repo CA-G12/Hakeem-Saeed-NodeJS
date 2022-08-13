@@ -47,6 +47,12 @@ const router = (req, res) => {
 
       break;
     }
+    case "/users": {
+      const filePath = path.join(__dirname, "data.json");
+      handler(res, filePath, "application/json");
+      break;
+    }
+
     default: {
       res.writeHead(404, { "Content-Type": "text/html" });
       res.end("<h1>Not Found</h1>");
