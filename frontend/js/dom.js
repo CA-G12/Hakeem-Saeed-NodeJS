@@ -230,18 +230,6 @@ const delayKeyUp = (() => {
   return delay;
 })();
 
-serchInput.addEventListener("keyup", (e) => {
-  const query = e.target.value;
-  delayKeyUp(() => {
-    if (query === "") {
-      searchcontainer.textContent = "";
-    } else {
-      const searchResultArr = searchCharacter(fakeArr, query);
-      rendersearchResult(searchResultArr);
-    }
-  }, 400);
-});
-
 function rendersearchResult(objs) {
   searchcontainer.textContent = "";
   for (let pro in objs) {
@@ -309,3 +297,19 @@ const renderMonster = (obj) => {
   phoneLabelContent.appendChild(phoneContent);
   monsterInfo.appendChild(phoneLabelContent);
 };
+
+fetch("/users", (data) => {
+  const monsters = JSON.parse(data);
+  console.log(data);
+  serchInput.addEventListener("keyup", (e) => {
+    const query = e.target.value;
+    delayKeyUp(() => {
+      if (query === "") {
+        searchcontainer.textContent = "";
+      } else {
+        const searchResultArr = searchCharacter(monsters, query);
+        rendersearchResult(searchResultArr);
+      }
+    }, 400);
+  });
+});
