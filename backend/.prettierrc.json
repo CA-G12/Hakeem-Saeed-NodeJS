@@ -1,8 +1,0 @@
-{
-  "trailingComma": "all",
-  "tabWidth": 2,
-  "singleQuote": true,
-  "rules": {
-    "quotes": [2, "single", { "avoidEscape": true }]
-  }
-}
