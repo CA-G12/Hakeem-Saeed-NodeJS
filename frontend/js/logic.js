@@ -11,3 +11,6 @@ const searchUser = (charactersArr, str) => {
 
   return result[0];
 };
+
+
+module.exports = searchCharacter;
